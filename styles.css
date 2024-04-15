@@ -1,0 +1,41 @@
+body{
+    background-image: url(img/background.jpg);
+    font-family: monospace;
+}
+
+.container-sorteador{
+    justify-content: center;
+    align-items: center;
+    background-image: url(img/sorteadorfinal.jpg);
+    display: flex;
+    height: 180px;
+    width: 600px;
+    border-radius: 30px;
+}
+
+
+p{  
+    color: #e6c718;
+    border-radius: 20px;
+    margin: 0 auto;
+    width: 100%;
+    font-size: 70px;
+    font-weight: 1000;
+    text-align: center;
+}
+
+
+button{
+    background-color: #E3C83E;
+    font: white;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 30px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+img{
+    width: 30%;
+}

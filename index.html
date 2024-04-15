@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Capyc Novo</title>
+</head>
+
+<body>
+
+    <div>
+        <img src="img/Sorteadores-06-min.jpg" alt="">
+    </div>
+
+
+    <div class="container-sorteador">
+        <p id="num1">0</p>
+        <p id="num2">0</p>
+        <p id="num3">0</p>
+        <p id="num4">0</p>
+        <p id="num5">0</p>
+    </div>
+
+    <button onclick="insertarNumeros()">Sortear</button>
+</body>
+
+<script>
+    function getRandomNumber() {
+        return Math.floor(Math.random() * 30723) + 1;
+    }
+
+    let realNumber = getRandomNumber();
+    let containerSorteador = document.querySelector('.container-sorteador');
+
+    function insertarNumeros() {
+
+        for (let i = 0; i < 5; i++) {
+            setTimeout(function () {
+                let tempNumber = getRandomNumber();
+                mostrarNumerosTemporales(tempNumber);
+            }, i * 80); // Cambia la velocidad aquí (en milisegundos)
+        }
+
+        // Después de mostrar los números temporales, mostrar el número final
+        setTimeout(function () {
+            mostrarNumeroFinal();
+        }, 7 * 50);
+
+        // Generar un nuevo número aleatorio
+    }
+
+    function mostrarNumeroFinal(){
+        realNumber = getRandomNumber();
+        let numeroComoString = realNumber.toString();
+        let digitos = [];
+
+
+        // Limpiar el contenido de los párrafos antes de insertar los nuevos números
+        containerSorteador.querySelectorAll('p').forEach(function (parrafo) {
+            parrafo.textContent = '';
+        });
+
+        // Completar con ceros por delante si el número es menor a 5 dígitos
+        while (numeroComoString.length < 5) {
+            numeroComoString = '0' + numeroComoString;
+        }
+
+        // Iterar sobre cada dígito del número y asignarlo a su respectivo párrafo
+        for (let i = 0; i < 5; i++) {
+            digitos.push(parseInt(numeroComoString[i]));
+
+            document.getElementById('num' + (i + 1)).textContent = numeroComoString[i];
+        }
+
+        console.log(numeroComoString);
+    }
+
+    function mostrarNumerosTemporales(number) {
+        let numeroComoString = number.toString();
+        let digitos = [];
+
+        // Limpiar el contenido de los párrafos antes de insertar los nuevos números temporales
+        containerSorteador.querySelectorAll('p').forEach(function (parrafo) {
+            parrafo.textContent = '';
+        });
+
+        // Completar con ceros por delante si el número es menor a 5 dígitos
+        while (numeroComoString.length < 5) {
+            numeroComoString = '0' + numeroComoString;
+        }
+
+        // Iterar sobre cada dígito del número y asignarlo a su respectivo párrafo
+        for (let i = 0; i < 5; i++) {
+            digitos.push(parseInt(numeroComoString[i]));
+
+            document.getElementById('num' + (i + 1)).textContent = numeroComoString[i];
+        }
+    }
+</script>
+
+</html>
