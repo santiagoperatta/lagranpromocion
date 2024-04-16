@@ -1,44 +1,17 @@
+body {
+	background-image: url(../img/background.jpg);
+	font-family: 'Montserrat', sans-serif;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+}
+
+
 .container {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	height: 100%;
-}
-
-.container-sorteador {
-	justify-content: center;
-	align-items: center;
-	background-image: url(img/Sorteadores-06.png);
-	display: flex;
-	height: 403px;
-	width: 814px;
-	background-repeat: no-repeat;
-	transition: background-image 1s;
-}
-
-p {
-	color: #e6c718;
-	border-radius: 20px;
-	max-width: 135px;
-	width: 100%;
-	font-size: 70px;
-	font-weight: 800;
-	text-align: center;
-	text-shadow: 3px 3px 0 #FF0000, -3px -3px 0 #FF0000, 3px -3px 0 #FF0000, -3px 3px 0 #FF0000;
-}
-
-button {
-    background-color: #E3C83E;
-    color: white;
-    font-size: 40px;
-    font-weight: 1000;
-    text-align: center;
-    text-transform: uppercase;
-    margin: 30px auto;
-    padding: 30px 50px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    display: block;
 }
