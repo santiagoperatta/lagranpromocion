@@ -1,31 +1,48 @@
+@keyframes parpadeo {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.parpadeo {
+    animation: parpadeo 0.7s infinite;
+}
+
+body {
+    background-image: url(../img/background.jpg);
+	background-repeat: no-repeat;
+    font-family: 'Montserrat', sans-serif;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
 .container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .container-sorteador {
-	justify-content: center;
-	align-items: center;
-	background-image: url(../img/Sorteadores-06.png);
-	display: flex;
-	height: 403px;
-	width: 814px;
-	background-repeat: no-repeat;
-	transition: background-image 1s;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/Sorteadores-06.png);
+    display: flex;
+    height: 403px;
+    width: 814px;
+    background-repeat: no-repeat;
 }
 
 p {
-	color: #e6c718;
-	border-radius: 20px;
-	max-width: 135px;
-	width: 100%;
-	font-size: 70px;
-	font-weight: 800;
-	text-align: center;
-	text-shadow: 3px 3px 0 #FF0000, -3px -3px 0 #FF0000, 3px -3px 0 #FF0000, -3px 3px 0 #FF0000;
+    color: #e6c718;
+    border-radius: 20px;
+    max-width: 135px;
+    width: 100%;
+    font-size: 70px;
+    font-weight: 800;
+    text-align: center;
+    text-shadow: 3px 3px 0 #FF0000, -3px -3px 0 #FF0000, 3px -3px 0 #FF0000, -3px 3px 0 #FF0000;
 }
 
 button {
@@ -41,4 +58,13 @@ button {
     border-radius: 20px;
     cursor: pointer;
     display: block;
+}
+
+
+.logo{
+	width: 300px;
+}
+
+.logo-container{
+	align-items: center;
 }
