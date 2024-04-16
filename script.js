@@ -6,39 +6,64 @@ let realNumber = getRandomNumber();
 let containerSorteador = document.querySelector('.container-sorteador');
 
 function insertarNumeros() {
-    containerSorteador.style.backgroundImage = "url(img/Sorteadores-04.png)";
+	containerSorteador.style.backgroundImage = "url(img/Sorteadores-04.png)";
 
-    let temporalesInterval = setInterval(function() {
-        let tempNumber = getRandomNumber();
-        mostrarNumerosTemporales(tempNumber);
-    }, 80);
+	// Generar un número aleatorio
+	let realNumber = getRandomNumber();
+
+	// Enviar el número generado al servidor
+	fetch('obtener_dato.php', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({ numero: realNumber })
+	})
+		.then(response => response.json())
+		.then(data => {
+			// Manejar los datos recibidos del servidor (si es necesario)
+			console.log(data);
+		})
+		.catch(error => {
+			console.error('Error al enviar solicitud:', error);
+		});
+
+	let temporalesInterval = setInterval(function () {
+		let tempNumber = getRandomNumber();
+		mostrarNumerosTemporales(tempNumber);
+	}, 80);
 
 	fetch('obtener_dato.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ numero: realNumber }) // Envía el número generado como JSON al servidor
-    })
-    .then(response => response.json())
-    .then(data => {
-        // Manejar los datos recibidos del servidor (si es necesario)
-        console.log(data);
-    })
-    .catch(error => {
-        console.error('Error al enviar solicitud:', error);
-    });
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({ numero: realNumber }) // Envía el número generado como JSON al servidor
+	})
+		.then(response => response.json())
+		.then(data => {
+			// Manejar los datos recibidos del servidor (si es necesario)
+			console.log(data);
+		})
+		.catch(error => {
+			console.error('Error al enviar solicitud:', error);
+		});
 
-    setTimeout(function() {
-        clearInterval(temporalesInterval);
-        mostrarNumeroFinal();
-		for (let i = 0; i < 5; i++) {
-			document.getElementById(`num${i + 1}`).classList.add('parpadeo');
-		}
-        setTimeout(function () {
-            containerSorteador.style.backgroundImage = "url(img/Sorteadores-06.png)";
-        }, 40);
-    }, 4 * 1000);
+	setTimeout(function () {
+		clearInterval(temporalesInterval);
+		mostrarNumeroFinal();
+		// Eliminar la clase de parpadeo antes de iniciar una nueva animación
+		document.querySelectorAll('.parpadeo').forEach(function (element) {
+			element.classList.remove('parpadeo');
+		});
+		setTimeout(function () {
+			containerSorteador.style.backgroundImage = "url(img/Sorteadores-06.png)";
+			// Agregar parpadeo a los números ganadores
+			for (let i = 0; i < 5; i++) {
+				document.getElementById(`num${i + 1}`).classList.add('parpadeo');
+			}
+		}, 40);
+	}, 4 * 1000);
 }
 
 
