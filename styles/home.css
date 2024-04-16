@@ -1,13 +1,21 @@
 body {
-	background-image: url(../img/background.jpg);
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	margin: 0;
+    background-image: url(../img/background.jpg);
+    background-size: cover; /* Para cubrir toda el área del body */
+    background-position: center; /* Para centrar la imagen */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    width: 100%;
+}
+a{
+    text-decoration: none;
+    color: white;
 }
 
+/******HEADER********/
 .nav {
-    margin-top: 30px;
+    height: 100px;
     position: fixed;
     display: flex;
     justify-content: center;
@@ -15,12 +23,15 @@ body {
     gap: 2rem;
     width: 100%;
     color: white;
+    background: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(2px);
 }
 
 .nav-page {
-    font-size: 1.3rem;
+    font-weight: 600;
+    font-size: 1rem;
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     list-style: none;
 }
 
@@ -32,43 +43,31 @@ body {
 }
 
 .logo {
-    width: 200px;
+    width: 10%;
     height: 7vh;
 }
 
-.iframe {
-    display:block;
-    margin: 100px auto;
-    border: none;
-    background: red;
-    width: 60%;
-    height: 60vh;
-}
-
-
+/******SECTION PROMOCION*******/
 .section-promocion{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
-    margin-top: 150px;
-}
-.img-promocion{
-    width: 350px;
-    height: 350px;
-}
-
-.img-promocion-one{
-    display: block;
-    margin: 0 auto;
-    width: 900px;
-    height: 300px;
+    gap: 1rem;
+    margin-top: 18px;
 }
 .mil-millones{
-    height: 400px;
-    padding-bottom: 100px;
+    height: 30%;
+    width:30%;
+    padding-bottom: 200px;
 }
-.casi-irreal-golden{
+.img-golden{
+    height: 30%;
+    width: 23%;
+    padding-top: 100px;
+}
+.img-casi-irreal{
+    height: 25%;
+    width: 35%;
     padding-top: 100px;
 }
 .luz {
@@ -82,3 +81,13 @@ body {
     transform: translate(-50%, -50%);
     z-index: -1; /* Coloca la imagen de la luz detrás de los logos */
 }
+
+/******VIDEO********/
+.iframe {
+    display:block;
+    margin: 0 auto;
+    margin-top: 150px;
+    width: 80%;
+    height: 100vh;
+}
+
