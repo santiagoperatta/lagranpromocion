@@ -1,53 +1,34 @@
 function getRandomNumber() {
-	return Math.floor(Math.random() * 30723) + 1;
+	return Math.floor(Math.random() * 30722) + 1;
 }
 
 let realNumber = getRandomNumber();
 let containerSorteador = document.querySelector('.container-sorteador');
 
 function insertarNumeros() {
-	containerSorteador.style.backgroundImage = "url(img/Sorteadores-04.png)";
+    containerSorteador.style.backgroundImage = "url(img/Sorteadores-04.png)";
 
-	// Generar un número aleatorio
-	let realNumber = getRandomNumber();
-
-	// Enviar el número generado al servidor
-	fetch('obtener_dato.php', {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify({ numero: realNumber })
-	})
-		.then(response => response.json())
-		.then(data => {
-			// Manejar los datos recibidos del servidor (si es necesario)
-			console.log(data);
-		})
-		.catch(error => {
-			console.error('Error al enviar solicitud:', error);
-		});
+    // Enviar el número generado al servidor
+    fetch('obtener_dato.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ numero: realNumber }) // Enviar el número generado como parte de los datos
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Manejar los datos recibidos del servidor (si es necesario)
+        console.log(data);
+    })
+    .catch(error => {
+        console.error('Error al enviar solicitud:', error);
+    });
 
 	let temporalesInterval = setInterval(function () {
 		let tempNumber = getRandomNumber();
 		mostrarNumerosTemporales(tempNumber);
 	}, 80);
-
-	fetch('obtener_dato.php', {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify({ numero: realNumber }) // Envía el número generado como JSON al servidor
-	})
-		.then(response => response.json())
-		.then(data => {
-			// Manejar los datos recibidos del servidor (si es necesario)
-			console.log(data);
-		})
-		.catch(error => {
-			console.error('Error al enviar solicitud:', error);
-		});
 
 	setTimeout(function () {
 		clearInterval(temporalesInterval);
@@ -67,8 +48,9 @@ function insertarNumeros() {
 }
 
 
+
 function mostrarNumeroFinal() {
-	realNumber = getRandomNumber();
+	console.log("Número final generado:", realNumber); // Imprimir el número final en la consola
 	let numeroComoString = realNumber.toString();
 	let digitos = [];
 	// Limpiar el contenido de los párrafos antes de insertar los nuevos números
@@ -88,7 +70,6 @@ function mostrarNumeroFinal() {
 		document.getElementById('num' + (i + 1)).textContent = numeroComoString[i];
 	}
 
-	console.log(numeroComoString);
 }
 
 function mostrarNumerosTemporales(number) {
