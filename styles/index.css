@@ -5,10 +5,4 @@
 	font-family: 'Montserrat', sans-serif;
 }
 
-body {
-	background-image: url(../img/background.jpg);
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	margin: 0;
-}
+

@@ -1,26 +1,69 @@
-.nav{
+body {
+	background-image: url(../img/background.jpg);
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+}
+
+.nav {
     margin-top: 30px;
+    position: fixed;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     gap: 2rem;
     width: 100%;
     color: white;
 }
 
-.nav-page{
+.nav-page {
     font-size: 1.3rem;
     display: flex;
     gap: 2rem;
     list-style: none;
 }
-.links{
+
+.links {
     border-radius: 50px;
     padding: 10px;
     color: darkgoldenrod;
     background-color: black;
 }
-.logo{
+
+.logo {
     width: 200px;
     height: 7vh;
+}
+
+.iframe {
+    display:block;
+    margin: 100px auto;
+    border: none;
+    background: red;
+    width: 60%;
+    height: 60vh;
+}
+
+
+.section-promocion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 150px;
+}
+.img-promocion{
+    width: 300px;
+    height: 250px;
+}
+
+.img-promocion-one{
+    display: block;
+    margin: 0 auto;
+    width: 900px;
+    height: 300px;
+}
+.mil-millones{
+    padding-bottom: 100px;
 }
