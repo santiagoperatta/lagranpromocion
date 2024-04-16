@@ -9,7 +9,7 @@
 .container-sorteador {
 	justify-content: center;
 	align-items: center;
-	background-image: url(img/Sorteadores-06.png);
+	background-image: url(../img/Sorteadores-06.png);
 	display: flex;
 	height: 403px;
 	width: 814px;
