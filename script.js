@@ -32,6 +32,9 @@ function insertarNumeros() {
     setTimeout(function() {
         clearInterval(temporalesInterval);
         mostrarNumeroFinal();
+		for (let i = 0; i < 5; i++) {
+			document.getElementById(`num${i + 1}`).classList.add('parpadeo');
+		}
         setTimeout(function () {
             containerSorteador.style.backgroundImage = "url(img/Sorteadores-06.png)";
         }, 40);
