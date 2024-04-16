@@ -54,8 +54,8 @@ body {
     margin-top: 150px;
 }
 .img-promocion{
-    width: 300px;
-    height: 250px;
+    width: 350px;
+    height: 350px;
 }
 
 .img-promocion-one{
@@ -65,5 +65,20 @@ body {
     height: 300px;
 }
 .mil-millones{
+    height: 400px;
     padding-bottom: 100px;
+}
+.casi-irreal-golden{
+    padding-top: 100px;
+}
+.luz {
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 1000px;
+    height: 1000px;
+    opacity: 0.6;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Coloca la imagen de la luz detrás de los logos */
 }
