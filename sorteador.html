@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,11 @@
     <link rel="stylesheet" href="./styles/sorteador.css">
     <title>Sorteador</title>
 </head>
+
 <body>
     <div class="logo-container">
-        <img style="width: 300px; margin-top: 60px; filter: drop-shadow(-1px -4px 40px #ffbb00);" class="logo" src="img/logogolden.png" alt="Logo Golden">
+        <img style="width: 300px; margin-top: 60px; filter: drop-shadow(-1px -4px 40px #ffbb00);" class="logo"
+            src="img/logogolden.png" alt="Logo Golden">
     </div>
     <div class="container" onclick="insertarNumeros()">
         <div class="container-sorteador" id="containerSorteador">
@@ -25,6 +28,15 @@
         <img style="margin-top: -45px;" class="logo" src="img/logolgp.png" alt="Logo La Gran Promocion">
         <img style="margin-top: -45px;" class="logo" src="img/abrilincreible.png" alt="Abril Increible">
     </div>
+
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-content">
+            <div id="modalData" class="modal-text">
+            </div>
+        </div>
+    </div>
 </body>
 <script src="script.js"></script>
+
 </html>
