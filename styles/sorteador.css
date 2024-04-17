@@ -1,3 +1,11 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+}
+
+
 @keyframes parpadeo {
     0% { opacity: 1; }
     50% { opacity: 0; }
@@ -9,14 +17,12 @@
 }
 
 body {
-    background-image: url(../img/background.jpg);
-	background-repeat: no-repeat;
-    font-family: 'Montserrat', sans-serif;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
+	background-image: url(../img/background.jpg);
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
 }
-
 .container {
     display: flex;
     flex-direction: column;
@@ -25,25 +31,27 @@ body {
     position: relative;
 }
 
+.container-sorteador {
+	margin-top: -70px;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/sorteadorprueba4.png);
+    display: flex;
+    height: 600px;
+    width: 820px;
+    background-repeat: no-repeat;
+    position: relative; /* Añadir posición relativa */
+    z-index: -2; /* Asegurar que el contenedor esté por encima de la imagen */
+}
+
 .luz {
     position: absolute;
     top: 50%;
     left: 50%;
-    max-width: 1280px;
+    max-width: 1240px;
     opacity: 0.6;
     transform: translate(-50%, -50%);
-    z-index: -1; /* Coloca la imagen de la luz detrás de los logos */
-}
-
-
-.container-sorteador {
-    justify-content: center;
-    align-items: center;
-    background-image: url(../img/Sorteadores-06.png);
-    display: flex;
-    height: 403px;
-    width: 814px;
-    background-repeat: no-repeat;
+    z-index: -3; /* Colocar la imagen de la luz detrás de los logos */
 }
 
 p {

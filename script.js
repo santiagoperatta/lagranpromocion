@@ -1,92 +1,140 @@
 function getRandomNumber() {
-	return Math.floor(Math.random() * 30722) + 1;
+    return Math.floor(Math.random() * 51000) + 1;
 }
 
-let realNumber = getRandomNumber();
 let containerSorteador = document.querySelector('.container-sorteador');
+let temporalesInterval;
 
 function insertarNumeros() {
-    containerSorteador.style.backgroundImage = "url(img/Sorteadores-04.png)";
+    let realNumber;
+    verificarNumeroRecursivo();
 
-    // Enviar el número generado al servidor
+    function verificarNumeroRecursivo() {
+        realNumber = getRandomNumber();
+        verificarNumero(realNumber)
+            .then(valido => {
+                if (valido) {
+                    containerSorteador.style.backgroundImage = "url(img/sorteadorprueba8.png)";
+                    enviarNumeroAlServidor(realNumber);
+                    mostrarNumerosTemporales(realNumber);
+                    setTimeout(function () {
+                        clearInterval(temporalesInterval);
+                        mostrarNumeroFinal(realNumber);
+                        document.querySelectorAll('.parpadeo').forEach(function (element) {
+                            element.classList.remove('parpadeo');
+                        });
+                        setTimeout(function () {
+                            containerSorteador.style.backgroundImage = "url(img/sorteadorprueba4.png)";
+                            for (let i = 0; i < 5; i++) {
+                                document.getElementById(`num${i + 1}`).classList.add('parpadeo');
+                            }
+                        }, 40);
+                    }, 4 * 1000);
+                } else {
+                    verificarNumeroRecursivo();
+                }
+            })
+            .catch(error => {
+                console.error('Error al verificar número:', error);
+            });
+    }
+}
+
+function enviarNumeroAlServidor(numero) {
     fetch('obtener_dato.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ numero: realNumber }) // Enviar el número generado como parte de los datos
+        body: JSON.stringify({ numero: numero })
     })
     .then(response => response.json())
     .then(data => {
-        // Manejar los datos recibidos del servidor (si es necesario)
         console.log(data);
     })
     .catch(error => {
         console.error('Error al enviar solicitud:', error);
     });
-
-	let temporalesInterval = setInterval(function () {
-		let tempNumber = getRandomNumber();
-		mostrarNumerosTemporales(tempNumber);
-	}, 80);
-
-	setTimeout(function () {
-		clearInterval(temporalesInterval);
-		mostrarNumeroFinal();
-		// Eliminar la clase de parpadeo antes de iniciar una nueva animación
-		document.querySelectorAll('.parpadeo').forEach(function (element) {
-			element.classList.remove('parpadeo');
-		});
-		setTimeout(function () {
-			containerSorteador.style.backgroundImage = "url(img/Sorteadores-06.png)";
-			// Agregar parpadeo a los números ganadores
-			for (let i = 0; i < 5; i++) {
-				document.getElementById(`num${i + 1}`).classList.add('parpadeo');
-			}
-		}, 40);
-	}, 4 * 1000);
 }
 
+function mostrarNumeroFinal(numero) {
+    console.log("Número final generado:", numero);
+    let numeroComoString = numero.toString();
+    let digitos = [];
+    containerSorteador.querySelectorAll('p').forEach(function (parrafo) {
+        parrafo.textContent = '';
+    });
 
+    while (numeroComoString.length < 5) {
+        numeroComoString = '0' + numeroComoString;
+    }
 
-function mostrarNumeroFinal() {
-	console.log("Número final generado:", realNumber); // Imprimir el número final en la consola
-	let numeroComoString = realNumber.toString();
-	let digitos = [];
-	// Limpiar el contenido de los párrafos antes de insertar los nuevos números
-	containerSorteador.querySelectorAll('p').forEach(function (parrafo) {
-		parrafo.textContent = '';
-	});
-
-	// Completar con ceros por delante si el número es menor a 5 dígitos
-	while (numeroComoString.length < 5) {
-		numeroComoString = '0' + numeroComoString;
-	}
-
-	// Iterar sobre cada dígito del número y asignarlo a su respectivo párrafo
-	for (let i = 0; i < 5; i++) {
-		digitos.push(parseInt(numeroComoString[i]));
-
-		document.getElementById('num' + (i + 1)).textContent = numeroComoString[i];
-	}
-
+    for (let i = 0; i < 5; i++) {
+        digitos.push(parseInt(numeroComoString[i]));
+        document.getElementById('num' + (i + 1)).textContent = numeroComoString[i];
+    }
 }
 
 function mostrarNumerosTemporales(number) {
-	let numeroComoString = number.toString();
-	let digitos = [];
+    let numeroComoString = number.toString();
+    let digitos = [];
 
-	containerSorteador.querySelectorAll('p').forEach(function (parrafo) {
-		parrafo.textContent = '';
-	});
+    containerSorteador.querySelectorAll('p').forEach(function (parrafo) {
+        parrafo.textContent = '';
+    });
 
-	while (numeroComoString.length < 5) {
-		numeroComoString = '0' + numeroComoString;
-	}
+    let contador = 0;
+    temporalesInterval = setInterval(function () {
+        let tempNumber = getRandomNumber();
+        contador++;
+        if (contador >= 50) {
+            clearInterval(temporalesInterval);
+            return;
+        }
+        mostrarNumeroTemporal(tempNumber);
+    }, 80);
 
-	for (let i = 0; i < 5; i++) {
-		digitos.push(parseInt(numeroComoString[i]));
+    while (numeroComoString.length < 5) {
+        numeroComoString = '0' + numeroComoString;
+    }
 
-		document.getElementById('num' + (i + 1)).textContent = numeroComoString[i];
-	}
+    for (let i = 0; i < 5; i++) {
+        digitos.push(parseInt(numeroComoString[i]));
+        document.getElementById('num' + (i + 1)).textContent = numeroComoString[i];
+    }
+}
+
+function mostrarNumeroTemporal(number) {
+    let numeroComoString = number.toString();
+    let digitos = [];
+
+    while (numeroComoString.length < 5) {
+        numeroComoString = '0' + numeroComoString;
+    }
+
+    for (let i = 0; i < 5; i++) {
+        digitos.push(parseInt(numeroComoString[i]));
+        document.getElementById('num' + (i + 1)).textContent = numeroComoString[i];
+    }
+}
+
+function verificarNumero(numero) {
+    return fetch('obtener_dato.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ numero: numero })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.id_asociado) {
+            return true;
+        }
+        return false;
+    })
+    .catch(error => {
+        console.error('Error al verificar número:', error);
+        return false;
+    });
 }

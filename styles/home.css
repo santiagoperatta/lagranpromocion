@@ -1,21 +1,13 @@
 body {
-    background-image: url(../img/background.jpg);
-    background-size: cover; /* Para cubrir toda el área del body */
-    background-position: center; /* Para centrar la imagen */
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    width: 100%;
-}
-a{
-    text-decoration: none;
-    color: white;
+	background-image: url(../img/background.jpg);
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
 }
 
-/******HEADER********/
 .nav {
-    height: 100px;
+    margin-top: 30px;
     position: fixed;
     display: flex;
     justify-content: center;
@@ -23,15 +15,12 @@ a{
     gap: 2rem;
     width: 100%;
     color: white;
-    background: rgba(0, 0, 0, .1);
-    backdrop-filter: blur(2px);
 }
 
 .nav-page {
-    font-weight: 600;
-    font-size: 1rem;
+    font-size: 1.3rem;
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     list-style: none;
 }
 
@@ -43,31 +32,43 @@ a{
 }
 
 .logo {
-    width: 10%;
+    width: 200px;
     height: 7vh;
 }
 
-/******SECTION PROMOCION*******/
+.iframe {
+    display:block;
+    margin: 100px auto;
+    border: none;
+    background: red;
+    width: 60%;
+    height: 60vh;
+}
+
+
 .section-promocion{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
-    margin-top: 18px;
+    gap: 3rem;
+    margin-top: 150px;
+}
+.img-promocion{
+    width: 350px;
+    height: 350px;
+}
+
+.img-promocion-one{
+    display: block;
+    margin: 0 auto;
+    width: 900px;
+    height: 300px;
 }
 .mil-millones{
-    height: 30%;
-    width:30%;
-    padding-bottom: 200px;
+    height: 400px;
+    padding-bottom: 100px;
 }
-.img-golden{
-    height: 30%;
-    width: 23%;
-    padding-top: 100px;
-}
-.img-casi-irreal{
-    height: 25%;
-    width: 35%;
+.casi-irreal-golden{
     padding-top: 100px;
 }
 .luz {
@@ -81,13 +82,3 @@ a{
     transform: translate(-50%, -50%);
     z-index: -1; /* Coloca la imagen de la luz detrás de los logos */
 }
-
-/******VIDEO********/
-.iframe {
-    display:block;
-    margin: 0 auto;
-    margin-top: 150px;
-    width: 80%;
-    height: 100vh;
-}
-
