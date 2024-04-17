@@ -1,9 +1,23 @@
 body {
-	background-image: url(../img/background.jpg);
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	margin: 0;
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+
+    background-image: url(../img/background.jpg);
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
 .nav {
@@ -12,23 +26,43 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 3rem;
     width: 100%;
     color: white;
+}
+
+.logo {
+    width: 18%;
+    height: 10vh;
 }
 
 .nav-page {
     font-size: 1.3rem;
     display: flex;
-    gap: 2rem;
+    gap: 0.8rem;
     list-style: none;
 }
 
-.links {
+.nav-page-segundos-links a {
+    background-color: black;
     border-radius: 50px;
     padding: 10px;
-    color: darkgoldenrod;
-    background-color: black;
+    color: #f2c70d;
+}
+
+.nav-page-segundos-links :hover {
+    background-color: #f2c70d;
+    border-radius: 50px;
+    color: black;
+}
+
+/******SECTION PROMOCION*******/
+.section-promocion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 150px;
 }
 
 .logo {
@@ -37,48 +71,200 @@ body {
 }
 
 .iframe {
-    display:block;
+    display: block;
     margin: 100px auto;
     border: none;
-    background: red;
     width: 60%;
     height: 60vh;
 }
 
 
-.section-promocion{
+.section-promocion {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 3rem;
     margin-top: 150px;
 }
-.img-promocion{
+
+.img-promocion {
     width: 350px;
     height: 350px;
 }
 
-.img-promocion-one{
+.img-promocion-one {
     display: block;
     margin: 0 auto;
     width: 900px;
     height: 300px;
 }
-.mil-millones{
+
+.mil-millones {
+    height: 30%;
+    width: 30%;
+    padding-bottom: 200px;
+}
+
+.img-golden {
+    height: 30%;
+    width: 23%;
+    padding-top: 100px;
+}
+
+.img-casi-irreal {
+    height: 25%;
+    width: 35%;
+}
+
+.mil-millones {
     height: 400px;
     padding-bottom: 100px;
 }
-.casi-irreal-golden{
+
+.casi-irreal-golden {
     padding-top: 100px;
 }
+
 .luz {
     pointer-events: none;
     position: absolute;
     top: 50%;
     left: 50%;
     max-width: 1000px;
-    height: 1000px;
+    height: 700px;
     opacity: 0.6;
     transform: translate(-50%, -50%);
-    z-index: -1; /* Coloca la imagen de la luz detrás de los logos */
+    z-index: -1;
+}
+
+/******VIDEO********/
+.iframe {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    height: 100vh;
+    margin-top: 45px;
+}
+
+/*******BANNER*********/
+.banner-golden IMG {
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+    margin-top: 45px;
+}
+
+/*********SECTION INSTAGRAM***********/
+.instagram-back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 112px;
+    height: 112px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    border-radius: 100%;
+    background: #f09433;
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
+}
+
+.instagram-back-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+
+.instagram-white {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #fff;
+    width: 107px;
+    height: 107px;
+    border-radius: 100%;
+}
+
+.logo-instagram {
+    display: block;
+    width: 80%;
+}
+
+.instagram-link a {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+
+.instagram-photos {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    height: 60vh;
+}
+
+/******REDES*********/
+
+.sticky-container {
+    padding: 0px;
+    margin: 0px;
+    position: fixed;
+    right: -135px;
+    top: 230px;
+    width: 170px;
+    z-index: 1100;
+}
+
+.sticky li {
+    border-radius: 30PX;
+    list-style-type: none;
+    background-color: #000547;
+    color: #efefef;
+    height: 43px;
+    padding: 0px;
+    margin: 0px 0px 1px 0px;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+    cursor: pointer;
+}
+
+.sticky li:hover {
+    margin-left: -5px;
+}
+
+.sticky li i {
+    color: #f2c70d;
+    float: left;
+    margin: 10px 15px;
+    margin-top: 15px;
+    margin-right: 5px;
+}
+
+.sticky li p {
+    color: white;
+    padding-top: 10px;
+    line-height: 16px;
+    font-size: 11px;
+}
+
+.sticky li p a {
+    text-decoration: none;
+    color: white;
+}
+
+.sticky li p a:hover {
+    text-decoration: underline;
 }
