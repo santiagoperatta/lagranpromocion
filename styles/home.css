@@ -5,42 +5,41 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
     width: 100%;
 }
 
 a {
     text-decoration: none;
     color: white;
-
-    background-image: url(../img/background.jpg);
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
 }
 
+
+
+/********NAV**********/
 .nav {
-    margin-top: 30px;
     position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(2px);
     gap: 3rem;
     width: 100%;
     color: white;
+    height: 100px;
 }
 
 .logo {
-    width: 18%;
-    height: 10vh;
+    width: 15%;
+    height: 11vh;
 }
 
 .nav-page {
-    font-size: 1.3rem;
+    font-size: 1rem;
     display: flex;
     gap: 0.8rem;
     list-style: none;
+    font-weight: 600;
 }
 
 .nav-page-segundos-links a {
@@ -64,21 +63,6 @@ a {
     gap: 3rem;
     margin-top: 150px;
 }
-
-.logo {
-    width: 200px;
-    height: 7vh;
-}
-
-.iframe {
-    display: block;
-    margin: 100px auto;
-    border: none;
-    width: 60%;
-    height: 60vh;
-}
-
-
 .section-promocion {
     display: flex;
     justify-content: center;
@@ -92,33 +76,16 @@ a {
     height: 350px;
 }
 
-.img-promocion-one {
-    display: block;
-    margin: 0 auto;
-    width: 900px;
-    height: 300px;
-}
-
 .mil-millones {
     height: 30%;
     width: 30%;
     padding-bottom: 200px;
 }
 
-.img-golden {
-    height: 30%;
-    width: 23%;
-    padding-top: 100px;
-}
 
 .img-casi-irreal {
     height: 25%;
     width: 35%;
-}
-
-.mil-millones {
-    height: 400px;
-    padding-bottom: 100px;
 }
 
 .casi-irreal-golden {
@@ -147,7 +114,7 @@ a {
 }
 
 /*******BANNER*********/
-.banner-golden IMG {
+.banner-golden img {
     display: block;
     margin: 0 auto;
     width: 60%;
