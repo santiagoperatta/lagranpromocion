@@ -61,37 +61,23 @@ a {
     justify-content: center;
     align-items: center;
     gap: 3rem;
-    margin-top: 150px;
+    margin: 30px 150px;
 }
-.section-promocion {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    margin-top: 150px;
-}
-
-.img-promocion {
-    width: 350px;
-    height: 350px;
-}
-
 .mil-millones {
     height: 30%;
     width: 30%;
     padding-bottom: 200px;
 }
 
-
-.img-casi-irreal {
-    height: 25%;
-    width: 35%;
-}
-
-.casi-irreal-golden {
+.casi-irreal {
+    width: 30%;
+    height: 30%;
     padding-top: 100px;
 }
-
+.golden{
+    width: 25%;
+    height: 25%;
+}
 .luz {
     pointer-events: none;
     position: absolute;
@@ -110,7 +96,6 @@ a {
     margin: 0 auto;
     width: 80%;
     height: 100vh;
-    margin-top: 45px;
 }
 
 /*******BANNER*********/
