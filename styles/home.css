@@ -15,7 +15,6 @@ a {
 }
 
 
-
 /********NAV**********/
 .nav {
     position: fixed;
@@ -55,6 +54,72 @@ a {
     border-radius: 50px;
     color: black;
 }
+
+
+.menu{
+    display: none;
+}
+
+@media screen and (max-width: 920px) {
+    .menu{
+        display: block;
+    }
+    .nav-page{
+        display: none;
+    }
+    .nav-page-segundos-links{
+        display: none;
+    }
+    .logo {
+        width: 25%;
+        height: 80%;
+    }
+    .mil-millones {
+        height: 100%;
+        width: 100%;
+        padding-bottom: 200px;
+    }
+    .casi-irreal {
+        height: 100%;
+        width: 100%;
+        padding-top: 100px;
+    }
+    .golden{
+        height: 100%;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .menu{
+        display: block;
+    }
+    .nav-page{
+        display: none;
+    }
+    .nav-page-segundos-links{
+        display: none;
+    }
+    .logo {
+        width: 25%;
+        height: 80%;
+    }
+    .mil-millones {
+        height: 100%;
+        width: 100%;
+        padding-bottom: 200px;
+    }
+    .casi-irreal {
+        height: 100%;
+        width: 100%;
+        padding-top: 100px;
+    }
+    .golden{
+        height: 100%;
+        width: 100%;
+    }
+}
+
 
 /******SECTION PROMOCION*******/
 .section-promocion {
