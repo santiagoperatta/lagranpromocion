@@ -67,16 +67,21 @@ function mostrarModal(data) {
 
     modalData.innerHTML = "";
 
-    var nombre = data.NOMBRE;
-    var localidad = data.LOCALIDAD;
+    var nombre = data.nombre;
+    var localidad = data.localidad;
+    var vendedor = data.vendedor;
 
     var pNombre = document.createElement("h1");
     pNombre.textContent = nombre;
     modalData.appendChild(pNombre);
 
-    var pEdad = document.createElement("h2");
-    pEdad.textContent = localidad;
-    modalData.appendChild(pEdad);
+    var pLocalidad = document.createElement("h2");
+    pLocalidad.textContent = "Localidad: " + localidad;
+    modalData.appendChild(pLocalidad);
+
+    var pVendedor = document.createElement("h2");
+    pVendedor.textContent = "Vendedor: " + vendedor;
+    modalData.appendChild(pVendedor);
 
     modal.style.display = "block";
 
@@ -90,7 +95,6 @@ function mostrarModal(data) {
         }
     }
 }
-
 function mostrarNumeroFinal(numero) {
     console.log("Número final generado:", numero);
     let numeroComoString = numero.toString();
