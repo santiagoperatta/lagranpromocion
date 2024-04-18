@@ -4,7 +4,7 @@ body {
     background-position: center;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     width: 100%;
 }
 
@@ -56,70 +56,9 @@ a {
 }
 
 
-.menu{
+.menu {
     display: none;
 }
-
-@media screen and (max-width: 920px) {
-    .menu{
-        display: block;
-    }
-    .nav-page{
-        display: none;
-    }
-    .nav-page-segundos-links{
-        display: none;
-    }
-    .logo {
-        width: 25%;
-        height: 80%;
-    }
-    .mil-millones {
-        height: 100%;
-        width: 100%;
-        padding-bottom: 200px;
-    }
-    .casi-irreal {
-        height: 100%;
-        width: 100%;
-        padding-top: 100px;
-    }
-    .golden{
-        height: 100%;
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 700px) {
-    .menu{
-        display: block;
-    }
-    .nav-page{
-        display: none;
-    }
-    .nav-page-segundos-links{
-        display: none;
-    }
-    .logo {
-        width: 25%;
-        height: 80%;
-    }
-    .mil-millones {
-        height: 100%;
-        width: 100%;
-        padding-bottom: 200px;
-    }
-    .casi-irreal {
-        height: 100%;
-        width: 100%;
-        padding-top: 100px;
-    }
-    .golden{
-        height: 100%;
-        width: 100%;
-    }
-}
-
 
 /******SECTION PROMOCION*******/
 .section-promocion {
@@ -129,6 +68,7 @@ a {
     gap: 3rem;
     margin: 30px 150px;
 }
+
 .mil-millones {
     height: 30%;
     width: 30%;
@@ -140,17 +80,19 @@ a {
     height: 30%;
     padding-top: 100px;
 }
-.golden{
+
+.golden {
     width: 25%;
     height: 25%;
 }
+
 .luz {
     pointer-events: none;
     position: absolute;
     top: 50%;
     left: 50%;
-    max-width: 1000px;
-    height: 700px;
+    max-width: 100%;
+    height: 100%;
     opacity: 0.6;
     transform: translate(-50%, -50%);
     z-index: -1;
@@ -172,6 +114,7 @@ a {
     display: block;
     margin: 0 auto;
 }
+
 .rebote img {
     width: 60%;
     height: 40%;
@@ -182,10 +125,19 @@ a {
     animation-iteration-count: infinite;
     animation-timing-function: ease-out;
 }
+
 @keyframes rebote {
-    0%   {top: 0px;}
-    50%  {top: -50px;}
-    100% {top: 0px;}
+    0% {
+        top: 0px;
+    }
+
+    50% {
+        top: -50px;
+    }
+
+    100% {
+        top: 0px;
+    }
 }
 
 /*********SECTION INSTAGRAM***********/
@@ -220,7 +172,6 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-
     background-color: #fff;
     width: 107px;
     height: 107px;
@@ -245,7 +196,8 @@ a {
     display: block;
     margin: 0 auto;
     width: 80%;
-    height: 60vh;
+    height: 60%;
+    margin-bottom: 50px;
 }
 
 /******REDES*********/
@@ -301,4 +253,84 @@ a {
 
 .sticky li p a:hover {
     text-decoration: underline;
+}
+
+
+/****************MEDIA***************/
+@media screen and (max-width: 920px) {
+    .menu {
+        display: block;
+    }
+
+    .nav-page {
+        display: none;
+    }
+
+    .nav-page-segundos-links {
+        display: none;
+    }
+
+    .logo {
+        width: 25%;
+        height: 80%;
+    }
+
+    .section-promocion {
+        display: none;
+    }
+
+    .luz {
+        display: none;
+    }
+
+    .iframe {
+        margin-top: 70px;
+        width: 100%;
+        height: 50vh;
+    }
+
+    .instagram-photos {
+        width: 100%;
+        height: 80%;
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .menu {
+        display: block;
+    }
+
+    .nav-page {
+        display: none;
+    }
+
+    .nav-page-segundos-links {
+        display: none;
+    }
+
+    .logo {
+        width: 25%;
+        height: 80%;
+    }
+
+    .section-promocion {
+        display: none;
+    }
+
+    .luz {
+        display: none;
+    }
+
+    .iframe {
+        margin-top: 70px;
+        width: 100%;
+        height: 50vh;
+    }
+
+    .instagram-photos {
+        width: 100%;
+        height: 80%;
+        margin-bottom: 50px;
+    }
 }
