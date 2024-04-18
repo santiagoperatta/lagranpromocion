@@ -1,3 +1,5 @@
+let generatedNumbers = [];
+
 function getRandomNumber() {
     return Math.floor(Math.random() * 51000) + 1;
 }
@@ -11,32 +13,37 @@ function insertarNumeros() {
 
     function verificarNumeroRecursivo() {
         realNumber = getRandomNumber();
-        verificarNumero(realNumber)
-            .then(valido => {
-                if (valido) {
-                    containerSorteador.style.backgroundImage = "url(img/sorteadorprueba8.png)";
-                    enviarNumeroAlServidor(realNumber);
-                    mostrarNumerosTemporales(realNumber);
-                    setTimeout(function () {
-                        clearInterval(temporalesInterval);
-                        mostrarNumeroFinal(realNumber);
-                        document.querySelectorAll('.parpadeo').forEach(function (element) {
-                            element.classList.remove('parpadeo');
-                        });
+        if (generatedNumbers.includes(realNumber)) { // Verificar si el número ya está en generatedNumbers
+            verificarNumeroRecursivo(); // Si está en generatedNumbers, generar otro número
+        } else {
+            verificarNumero(realNumber)
+                .then(valido => {
+                    if (valido) {
+                        generatedNumbers.push(realNumber);
+                        containerSorteador.style.backgroundImage = "url(img/sorteadorprueba8.png)";
+                        enviarNumeroAlServidor(realNumber);
+                        mostrarNumerosTemporales(realNumber);
                         setTimeout(function () {
-                            containerSorteador.style.backgroundImage = "url(img/sorteadorprueba4.png)";
-                            for (let i = 0; i < 5; i++) {
-                                document.getElementById(`num${i + 1}`).classList.add('parpadeo');
-                            }
-                        }, 40);
-                    }, 4 * 1000);
-                } else {
-                    verificarNumeroRecursivo();
-                }
-            })
-            .catch(error => {
-                console.error('Error al verificar número:', error);
-            });
+                            clearInterval(temporalesInterval);
+                            mostrarNumeroFinal(realNumber);
+                            document.querySelectorAll('.parpadeo').forEach(function (element) {
+                                element.classList.remove('parpadeo');
+                            });
+                            setTimeout(function () {
+                                containerSorteador.style.backgroundImage = "url(img/sorteadorprueba4.png)";
+                                for (let i = 0; i < 5; i++) {
+                                    document.getElementById(`num${i + 1}`).classList.add('parpadeo');
+                                }
+                            }, 40);
+                        }, 4 * 1000);
+                    } else {
+                        verificarNumeroRecursivo();
+                    }
+                })
+                .catch(error => {
+                    console.error('Error al verificar número:', error);
+                });
+        }
     }
 }
 
@@ -97,6 +104,7 @@ function mostrarModal(data) {
 }
 function mostrarNumeroFinal(numero) {
     console.log("Número final generado:", numero);
+    console.log("Números válidos hasta ahora:", generatedNumbers);
     let numeroComoString = numero.toString();
     let digitos = [];
     containerSorteador.querySelectorAll('p').forEach(function (parrafo) {
