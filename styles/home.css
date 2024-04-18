@@ -116,13 +116,12 @@ a {
     animation-iteration-count: infinite;
     animation-timing-function: ease-out;
 }
-
-/* Standard syntax */
 @keyframes rebote {
     0%   {top: 0px;}
     50%  {top: -50px;}
     100% {top: 0px;}
 }
+
 /*********SECTION INSTAGRAM***********/
 .instagram-back {
     display: flex;
