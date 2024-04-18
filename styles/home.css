@@ -260,6 +260,9 @@ a {
 @media screen and (max-width: 920px) {
     .menu {
         display: block;
+        margin-top: 50px;
+        width: 70px;
+        height: 70px;
     }
 
     .nav-page {
@@ -299,6 +302,9 @@ a {
 @media screen and (max-width: 700px) {
     .menu {
         display: block;
+        margin-top: 50px;
+        width: 70px;
+        height: 70px;
     }
 
     .nav-page {
