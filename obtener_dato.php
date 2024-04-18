@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $numero = $data['numero'];
         $numeroEscapado = $conn->real_escape_string($numero);
 
-		$query = "SELECT * FROM asociados WHERE id_asociado = $numeroEscapado";
+		$query = "SELECT * FROM asociadosnew WHERE id_asociado = $numeroEscapado";
         $resultado = $conn->query($query);
 
         if ($resultado) {
