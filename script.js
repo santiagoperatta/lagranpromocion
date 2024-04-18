@@ -13,8 +13,8 @@ function insertarNumeros() {
 
     function verificarNumeroRecursivo() {
         realNumber = getRandomNumber();
-        if (generatedNumbers.includes(realNumber)) { // Verificar si el número ya está en generatedNumbers
-            verificarNumeroRecursivo(); // Si está en generatedNumbers, generar otro número
+        if (generatedNumbers.includes(realNumber)) {
+            verificarNumeroRecursivo();
         } else {
             verificarNumero(realNumber)
                 .then(valido => {
@@ -77,6 +77,7 @@ function mostrarModal(data) {
     var nombre = data.nombre;
     var localidad = data.localidad;
     var vendedor = data.vendedor;
+    var id_asociado = data.id_asociado;
 
     var pNombre = document.createElement("h1");
     pNombre.textContent = nombre;
@@ -90,15 +91,27 @@ function mostrarModal(data) {
     pVendedor.textContent = "Vendedor: " + vendedor;
     modalData.appendChild(pVendedor);
 
+    var pAsociado = document.createElement("h2");
+    pAsociado.textContent = "Número ganador: " + id_asociado;
+    modalData.appendChild(pAsociado);
+
     modal.style.display = "block";
 
     var span = document.getElementsByClassName("close")[0];
     span.onclick = function () {
         modal.style.display = "none";
+        // Restablecer los números del sorteador a "00000" al cerrar el modal
+        containerSorteador.querySelectorAll('p').forEach(function (parrafo) {
+            parrafo.textContent = '0';
+        });
     }
     window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
+            // Restablecer los números del sorteador a "00000" al cerrar el modal
+            containerSorteador.querySelectorAll('p').forEach(function (parrafo) {
+                parrafo.textContent = '0';
+            });
         }
     }
 }

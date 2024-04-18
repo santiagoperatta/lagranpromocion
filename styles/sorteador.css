@@ -1,3 +1,6 @@
+
+
+
 @keyframes animate {
     0% {
         transform: scale(1);
@@ -40,11 +43,14 @@
 
 body {
     background-image: url(../img/background.jpg);
+    background-size: cover;
+    background-position: center;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    height: 100%;
+    width: 100%;
 }
+
 
 .container {
     display: flex;
