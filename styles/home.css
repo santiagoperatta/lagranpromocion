@@ -103,6 +103,7 @@ a {
 .iframe {
     display: block;
     margin: 0 auto;
+    margin-top: 100px;
     width: 80%;
     height: 100vh;
     border-radius: 10px;
@@ -124,6 +125,7 @@ a {
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-out;
+    z-index: -1;
 }
 
 @keyframes rebote {
@@ -208,16 +210,16 @@ a {
     position: fixed;
     right: -135px;
     top: 230px;
-    width: 170px;
+    width: 210px;
     z-index: 1100;
 }
 
 .sticky li {
-    border-radius: 30PX;
+    border-radius: 50px;
     list-style-type: none;
     background-color: #000547;
     color: #efefef;
-    height: 43px;
+    height: 70px;
     padding: 0px;
     margin: 0px 0px 1px 0px;
     -webkit-transition: all 0.25s ease-in-out;
@@ -229,34 +231,90 @@ a {
 
 .sticky li:hover {
     margin-left: -5px;
+    background-color: #41449e;
+
 }
 
-.sticky li i {
+.sticky li svg {
     color: #f2c70d;
     float: left;
     margin: 10px 15px;
-    margin-top: 15px;
+    margin-top: 10px;
     margin-right: 5px;
+    width: 50px;
+    height: 50px;
 }
 
-.sticky li p {
-    color: white;
-    padding-top: 10px;
-    line-height: 16px;
-    font-size: 11px;
+
+/*************FOOTER***********/
+.footer {
+    width: 100%;
+    height: 45vh;
+    background-color: black;
 }
 
-.sticky li p a {
-    text-decoration: none;
-    color: white;
+.footer-logos {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 3rem;
 }
 
-.sticky li p a:hover {
+.footer-logoSCSM {
+    display: block;
+    width: 15%;
+    height: 40%;
+}
+
+.footer-logo {
+    width: 20%;
+    height: 50%;
+    margin-top: 70px;
+}
+
+.footer p {
+    text-align: start;
+}
+
+.footer a :hover{
     text-decoration: underline;
 }
 
+.footer-p {
+    margin-bottom: 10px;
+}
+.footer-icons-a{
+    display: flex;
+    gap: 1rem;
+}
+hr {
+    display: block;
+    margin: 0 auto;
+    margin-top: 40px;
+    border: 0;
+    width: 90%;
+    height: .1rem;
+    background-image: linear-gradient(to right,transparent,#f5f9fa,transparent);
+}
+
+h4 {
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+}
+
+span {
+    color: #f2c70d;
+}
 
 /****************MEDIA***************/
+@media screen and (min-width: 1400px) {
+    .logo {
+        width: 10%;
+        height: 90%;
+    }
+}
+
 @media screen and (max-width: 920px) {
     .menu {
         display: block;
@@ -275,7 +333,7 @@ a {
 
     .logo {
         width: 40%;
-        height: 80%;
+        height: 100%;
     }
 
     .section-promocion {
