@@ -308,11 +308,13 @@ span {
 }
 
 /****************MEDIA***************/
-@media screen and (max-width: 1400px) {
-  
-}
+@media screen and (max-width: 1400px) {}
 
 @media screen and (max-width: 920px) {
+    .nav {
+        justify-content: space-around;
+    }
+
     .menu {
         display: block;
         margin-top: 50px;
@@ -347,10 +349,17 @@ span {
         height: 80%;
         margin-bottom: 50px;
     }
+
+    .sticky-container {
+        display: none;
+    }
+
 }
 
 @media screen and (max-width: 700px) {
-
+    .nav {
+        justify-content: space-around;
+    }
 
     .menu {
         display: block;
@@ -385,5 +394,12 @@ span {
         width: 100%;
         height: 80%;
         margin-bottom: 50px;
+    }
+
+    .sticky-container {
+        display: none;
+    }
+    .footer-logos{
+        margin-top: 5px;
     }
 }
