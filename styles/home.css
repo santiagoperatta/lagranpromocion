@@ -30,8 +30,7 @@ a {
 }
 
 .logo {
-    width: 15%;
-    height: 65%;
+    height: 88%;
 }
 
 .nav-page {
@@ -249,14 +248,14 @@ a {
 /*************FOOTER***********/
 .footer {
     width: 100%;
-    height: 45vh;
+    height: 25vh;
     background-color: black;
 }
 
 .footer-logos {
     display: flex;
     justify-content: center;
-    align-items: end;
+    align-items: center;
     gap: 3rem;
 }
 
@@ -269,24 +268,25 @@ a {
 .footer-logo {
     width: 20%;
     height: 50%;
-    margin-top: 70px;
 }
 
 .footer p {
     text-align: start;
 }
 
-.footer a :hover{
+.footer a :hover {
     text-decoration: underline;
 }
 
 .footer-p {
     margin-bottom: 10px;
 }
-.footer-icons-a{
+
+.footer-icons-a {
     display: flex;
     gap: 1rem;
 }
+
 hr {
     display: block;
     margin: 0 auto;
@@ -294,7 +294,7 @@ hr {
     border: 0;
     width: 90%;
     height: .1rem;
-    background-image: linear-gradient(to right,transparent,#f5f9fa,transparent);
+    background-image: linear-gradient(to right, transparent, #f5f9fa, transparent);
 }
 
 h4 {
@@ -308,11 +308,8 @@ span {
 }
 
 /****************MEDIA***************/
-@media screen and (min-width: 1400px) {
-    .logo {
-        width: 10%;
-        height: 90%;
-    }
+@media screen and (max-width: 1400px) {
+  
 }
 
 @media screen and (max-width: 920px) {
@@ -329,11 +326,6 @@ span {
 
     .nav-page-segundos-links {
         display: none;
-    }
-
-    .logo {
-        width: 40%;
-        height: 100%;
     }
 
     .section-promocion {
@@ -358,9 +350,11 @@ span {
 }
 
 @media screen and (max-width: 700px) {
+
+
     .menu {
         display: block;
-        margin-top: 50px;
+        margin-bottom: 20px;
         width: 70px;
         height: 70px;
     }
@@ -371,11 +365,6 @@ span {
 
     .nav-page-segundos-links {
         display: none;
-    }
-
-    .logo {
-        width: 40%;
-        height: 80%;
     }
 
     .section-promocion {
