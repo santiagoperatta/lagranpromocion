@@ -5,5 +5,13 @@
 	font-family: 'Montserrat', sans-serif;
 	text-transform: uppercase;
 }
-
+body {
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
 

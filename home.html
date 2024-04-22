@@ -16,17 +16,7 @@
 <body>
     <header class="nav">
         <img class="logo" src="./img/logolgp.png" alt="La gran promocion logo">
-        <div class="menu">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="44" height="44"
-                viewBox="0 0 24 24" stroke-width="1.5" stroke="#9e9e9e" fill="none" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M4 6l16 0" />
-                <path d="M4 12l16 0" />
-                <path d="M4 18l16 0" />
-            </svg>
-        </div>
-        <nav class="nav-page">
+        <nav class="nav-page " id="nav-page-media">
             <a href="">Ganadores</a>
             <a href="">nosotros</a>
             <a href="">Quiero vender</a>
@@ -42,6 +32,24 @@
             </a>
         </nav>
     </header>
+    <header class="second-nav">
+        <div class="hamburger-menu">
+            <img class="logo" src="./img/logolgp.png" alt="La gran promocion logo">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+                <span></span>
+            </label>
+            <ul class="menu__box">
+                <li><a class="menu__item nav-page-segundos-links" href="#">Ganadores</a></li>
+                <li><a class="menu__item nav-page-segundos-links" href="#">nosotros</a></li>
+                <li><a class="menu__item nav-page-segundos-links" href="#">Quiero vender</a></li>
+                <li><a class="menu__item nav-page-segundos-links" href="#"><i class="fa-brands fa-whatsapp"></i>
+                        <span>¡Asociate aquí!</span></a></li>
+                <li><a class="menu__item nav-page-segundos-links" href="#"><i class="fa-solid fa-circle-play"></i>
+                        <span>Radio</span></a></li>
+            </ul>
+        </div>
+    </header>
     <main>
         <div style="height: 100px; color: white;"></div>
         <section class="section-promocion">
@@ -51,7 +59,7 @@
         </section>
         <img src="img/luz.png" alt="destello" class="luz">
 
-        <div class="">
+        <div>
             <iframe class="iframe" src="https://www.youtube.com/embed/tFUTNZcUjqE?si=D1Q9kk8YluCGUESZ&amp;start=1"
                 title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
