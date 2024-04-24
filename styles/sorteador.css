@@ -44,7 +44,6 @@
 .parpadeo {
     animation: parpadeo 0.7s 3;
 }
-
 body {
     background-image: url(../img/background.jpg);
     background-size: cover;
