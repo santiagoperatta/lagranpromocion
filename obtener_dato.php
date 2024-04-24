@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost";
-$username = "tclick";
-$password = "paROrivo29";
-$database = "tclick_bte";
+$servername = "localhost:3306";
+$username = "grupodev_speratta";
+$password = "Santiago@2024";
+$database = "grupodev_golden";
 
 $conn = new mysqli($servername, $username, $password, $database);
 
@@ -18,6 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $numeroEscapado = $conn->real_escape_string($numero);
 
 		$query = "SELECT * FROM asociadosnew WHERE id_asociado = $numeroEscapado";
+		//$query = "SELECT * FROM asociadosnew WHERE id_asociado = $numeroEscapado AND localidad = 'DEVOTO'"; (consulta ganadora devoto)
+
         $resultado = $conn->query($query);
 
         if ($resultado) {

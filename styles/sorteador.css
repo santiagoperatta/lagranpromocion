@@ -23,6 +23,10 @@
     }
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 @keyframes parpadeo {
     0% {
         opacity: 1;
